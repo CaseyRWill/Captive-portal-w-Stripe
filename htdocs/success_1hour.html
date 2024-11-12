@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thanks for your order!</title>
+  <link rel="stylesheet" href="style.css">
+
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script language="javascript">
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            async function redirect() {
+              sleep(10000);
+              window.location.href = "https://www.google.com/";
+            }
+            console.log("howdy")
+            //await new Promise(r => setTimeout(r, 5));
+            $.ajax({
+                type: "GET",
+                url: "./success_1hour.php" ,
+                data: {},
+                success : function() { 
+
+                    // here is the code that will run on client side after running clear.php on server
+
+                    // function below reloads current page
+                    //
+                    redirect()
+                }
+            });
+            
+    </script>
+
+
+</head>
+<body>
+  <section>
+    <p>
+      We appreciate your business! If you have any questions, please email
+      <a href="mailto:orders@example.com">orders@example.com</a>.
+    </p>
+  </section>
+</body>
+</html>
